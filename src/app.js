@@ -10,7 +10,6 @@ var mongoose = require("mongoose");
 
 var config = require("./config");
 var routes = {
-  index: require("./routes/index"),
   tweets: require("./routes/tweets")
 };
 
@@ -31,7 +30,7 @@ app.use(compression());
 app.use(methodOverride());
 
 // use the public directory for static files
-app.use(express.static(path.join(__dirname, "public"), {
+app.use(express.static(path.join(__dirname, "..", "public"), {
   maxAge: 365 * 24 * 60 * 60
 }));
 
@@ -40,7 +39,6 @@ if (app.get("env") === "development") {
 }
 
 // setup routes
-app.use(routes.index);
 app.use(routes.tweets);
 
 app.set("port", process.env.PORT || 3000);
