@@ -1,7 +1,16 @@
-$(function() {
-  var socket = io.connect();
+(function(){
 
-  socket.on("message", function(data){
-    console.log(data.message);
-  });
-});
+  angular
+    .module("Chapelnik", ["ngRoute"])
+    .config(config);
+
+  config.$inject = ["$locationProvider"];
+
+  function config($locationProvider) {
+    $locationProvider.html5Mode({
+      enabled: true,
+      requireBase: false
+    });
+  }
+
+})();
