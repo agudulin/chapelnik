@@ -5,14 +5,17 @@ module.exports = {
     vendor: {
       scripts: [
         {
+          src: "./bower_components/angular/angular.js",
+          minSrc: "./bower_components/angular/angular.min.js"
+        }, {
+          src: "./bower_components/angular-route/angular-route.js",
+          minSrc: "./bower_components/angular-route/angular-route.min.js"
+        }, {
           src: "./bower_components/jquery/dist/jquery.js",
           minSrc: "./bower_components/jquery/dist/jquery.min.js"
         }, {
           src: "./bower_components/bootstrap/dist/js/bootstrap.js",
           minSrc: "./bower_components/bootstrap/dist/js/bootstrap.min.js"
-        }, {
-          src: "./bower_components/angular/angular.js",
-          minSrc: "./bower_components/angular/angular.min.js"
         }
       ],
       styles: {
