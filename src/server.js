@@ -20,32 +20,32 @@ mongoose.connection.on("error", function() {
   console.error("MongoDB Connection Error. Make sure that MongoDB is running.");
 });
 
-// init express server
-var server = express();
+// init express app
+var app = express();
 
 // setup express
-server.use(morgan(server.get("env") === "production" ? "combined" : "dev"));
-server.use(bodyParser.json());
-server.use(bodyParser.urlencoded({ extended: true }));
-server.use(compression());
-server.use(methodOverride());
+app.use(morgan(app.get("env") === "production" ? "combined" : "dev"));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(compression());
+app.use(methodOverride());
 
 // use the public directory for static files
-server.use(express.static(path.join(__dirname, "public"), {
+app.use(express.static(path.join(__dirname, "public"), {
   maxAge: 365 * 24 * 60 * 60
 }));
 
-if (server.get("env") === "development") {
-  server.use(errorhandler());
+if (app.get("env") === "development") {
+  app.use(errorhandler());
 }
 
 // setup routes
-server.use(routes.index);
-server.use(routes.tweets);
+app.use(routes.index);
+app.use(routes.tweets);
 
-server.set("port", process.env.PORT || 3000);
-server.listen(server.get("port"), function() {
-  console.log("Express server listening on port " + server.get("port"));
+app.set("port", process.env.PORT || 3000);
+app.listen(app.get("port"), function() {
+  console.log("Express app listening on port " + app.get("port"));
 });
 
-module.exports = server;
+module.exports = app;
