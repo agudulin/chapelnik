@@ -44,8 +44,5 @@ app.use(routes.index);
 app.use(routes.tweets);
 
 app.set("port", process.env.PORT || 3000);
-app.listen(app.get("port"), function() {
-  console.log("Express app listening on port " + app.get("port"));
-});
 
 module.exports = app;
