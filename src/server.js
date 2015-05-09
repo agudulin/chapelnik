@@ -11,6 +11,7 @@ var mongoose = require("mongoose");
 var config = require("./config");
 var routes = {
   index: require("./routes/index"),
+  tweets: require("./routes/tweets")
 };
 
 // connect to mongo db
@@ -40,6 +41,7 @@ if (server.get("env") === "development") {
 
 // setup routes
 server.use(routes.index);
+server.use(routes.tweets);
 
 server.set("port", process.env.PORT || 3000);
 server.listen(server.get("port"), function() {
