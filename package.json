@@ -1,0 +1,19 @@
+{
+  "name": "chapelnik",
+  "version": "0.0.0",
+  "description": "A small web application that fetches Twitter stream for a couple of keywords",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/agudulin/chapelnik.git"
+  },
+  "author": "Alexander Gudulin <alexandr.gudulin@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/agudulin/chapelnik/issues"
+  },
+  "homepage": "https://github.com/agudulin/chapelnik"
+}
