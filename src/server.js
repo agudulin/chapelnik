@@ -6,8 +6,16 @@ var compression = require("compression");
 var errorhandler = require("errorhandler");
 var methodOverride = require("method-override");
 var morgan = require("morgan");
+var mongoose = require("mongoose");
 
+var config = require("./config");
 var routes = require("./routes");
+
+// connect to mongo db
+mongoose.connect(config.db);
+mongoose.connection.on("error", function() {
+  console.error("MongoDB Connection Error. Make sure that MongoDB is running.");
+});
 
 // init express server
 var server = express();
