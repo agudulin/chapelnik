@@ -9,7 +9,9 @@ var morgan = require("morgan");
 var mongoose = require("mongoose");
 
 var config = require("./config");
-var routes = require("./routes");
+var routes = {
+  index: require("./routes/index"),
+};
 
 // connect to mongo db
 mongoose.connect(config.db);
@@ -27,10 +29,6 @@ server.use(bodyParser.urlencoded({ extended: true }));
 server.use(compression());
 server.use(methodOverride());
 
-// use jade as default view engine
-server.set("views", path.join(__dirname, "views"));
-server.set("view engine", "jade");
-
 // use the public directory for static files
 server.use(express.static(path.join(__dirname, "public"), {
   maxAge: 365 * 24 * 60 * 60
@@ -40,7 +38,8 @@ if (server.get("env") === "development") {
   server.use(errorhandler());
 }
 
-server.get("/", routes.index);
+// setup routes
+server.use(routes.index);
 
 server.set("port", process.env.PORT || 3000);
 server.listen(server.get("port"), function() {
