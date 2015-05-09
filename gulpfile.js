@@ -31,22 +31,18 @@ gulp.task("bundle", function() {
     .pipe(gulp.dest("./public"));
 });
 
-gulp.task("copy-bower-components", function () {
-  gulp.src("./bower_components/**")
-    .pipe(gulp.dest("public/bower_components"));
-});
-
 gulp.task("copy-html-files", function () {
   gulp.src("./src/client/**/*.html")
     .pipe(gulp.dest("public/"));
 });
 
 
-gulp.task("default", ["less", "bundle"], function() {
+gulp.task("default", ["less", "bundle", "copy-html-files"], function() {
   gulp.watch("./src/client/**/*.less", ["less"]);
-  gulp.watch("./src/client/**/*.+(js|css|html)", ["bundle"]);
+  gulp.watch("./src/client/**/*.+(js|css)", ["bundle"]);
+  gulp.watch("./src/client/**/*.html", ["copy-html-files"]);
 });
 
 gulp.task("build",
-  ["lint", "bundle", "copy-html-files", "copy-bower-components"]
+  ["lint", "less", "bundle", "copy-html-files"]
 );
