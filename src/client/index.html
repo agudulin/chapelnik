@@ -8,7 +8,10 @@
     <link rel="stylesheet" href="./main.css"/>
   </head>
   <body ng-cloak>
-    <main ng-view></main>
+    <main>
+      <div ng-controller="FavoritesController as vm" ng-include="'favorites.html'"></div>
+      <div ng-controller="StreamController as vm" ng-include="'stream.html'"></div>
+    </main>
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="./vendor.js"></script>
