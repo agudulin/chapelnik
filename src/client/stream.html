@@ -1,0 +1,14 @@
+<div>
+  <div>{{vm.keywords}}</div>
+  <button ng-click="vm.toggleStream()">
+    {{ vm.isStreamingEnabled ? "Stop stream" : "Start stream" }}
+  </button>
+  <div>{{vm.status}}</div>
+</div>
+
+<div ng-repeat="tweet in vm.tweetList track by tweet.id">
+  <div>
+    <img ng-src="{{tweet.user.profile_image_url}}" />
+    {{tweet.user.screen_name}} ({{tweet.user.name}}): {{tweet.text}}
+  </div>
+</div>
