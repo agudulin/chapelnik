@@ -18,10 +18,6 @@ module.exports = {
           minSrc: "./bower_components/bootstrap/dist/js/bootstrap.min.js"
         }
       ],
-      styles: {
-        src: "./bower_components/bootstrap/dist/css/bootstrap.css",
-        minSrc: "./bower_components/bootstrap/dist/css/bootstrap.min.css"
-      },
       options: {
         useMin: prodLikeEnvs,
         uglify: false,
