@@ -8,10 +8,6 @@
   </div>
 
   <div class="twitter-stream__content">
-    <chplnk-tweet ng-repeat="tweet in vm.tweetList track by tweet.id"
-      tweet-user-photo-src="{{tweet.user.profile_image_url}}"
-      tweet-user-name="{{tweet.user.name}}"
-      tweet-user-screenname="{{tweet.user.screen_name}}"
-      tweet-text="{{tweet.text}}"></chplnk-tweet>
+    <chplnk-tweet ng-repeat="tweet in vm.tweetList track by tweet.id" tweet="tweet"/>
   </div>
 </div>

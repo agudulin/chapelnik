@@ -11,13 +11,23 @@
         replace: true,
         transclude: true,
         scope: {
-          tweetUserPhotoSrc: "@",
-          tweetUserName: "@",
-          tweetUserScreenname: "@",
-          tweetText: "@"
-        }
+          tweet: "="
+        },
+        controller: TweetController,
+        controllerAs: "vm",
+        bindToController: true
       };
 
       return directive;
+    }
+
+    function TweetController() {
+      var vm = this;
+
+      vm.addToFavorites = addToFavorites;
+
+      function addToFavorites(tweetItem) {
+        console.log(tweetItem);
+      }
     }
 })();

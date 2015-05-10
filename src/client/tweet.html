@@ -1,11 +1,11 @@
 <div class="tweet">
   <div class="tweet__user">
-    <img class="tweet__user-photo" ng-src="{{tweetUserPhotoSrc}}" />
-    <strong class="tweet__user-name">{{tweetUserName}}</strong>
-    <span class="tweet__user-screen-name">{{tweetUserScreenname}}</span>
-    <button class="tweet__fav-btn">
+    <img class="tweet__user-photo" ng-src="{{vm.tweet.user.profile_image_url}}" />
+    <strong class="tweet__user-name">{{vm.tweet.user.name}}</strong>
+    <span class="tweet__user-screen-name">{{vm.tweet.user.screen_name}}</span>
+    <button class="tweet__fav-btn" ng-click="vm.addToFavorites(vm.tweet)">
       <span class="icon-star"></span>
     </button>
   </div>
-  <div class="tweet__text">{{tweetText}}</div>
+  <div class="tweet__text">{{vm.tweet.text}}</div>
 </div>
