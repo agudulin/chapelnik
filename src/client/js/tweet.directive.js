@@ -21,13 +21,20 @@
       return directive;
     }
 
-    function TweetController() {
+    TweetController.$inject = ["TweetModel"];
+
+    function TweetController(TweetModel) {
       var vm = this;
 
       vm.addToFavorites = addToFavorites;
 
       function addToFavorites(tweetItem) {
-        console.log(tweetItem);
+        var tweetModel = new TweetModel();
+        tweetModel = $.extend(tweetModel, tweetItem); // add tweet item properties to the model
+
+        tweetModel.$save(function(savedItem) {
+          // success
+        });
       }
     }
 })();
