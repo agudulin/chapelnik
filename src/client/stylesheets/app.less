@@ -1,3 +1,49 @@
-body {
-  background-color: pink;
+@import "../../../bower_components/bootstrap/less/bootstrap";
+@import "../../../bower_components/bootstrap/less/grid";
+
+main {
+  .container;
+}
+
+.twitter-stream {
+  &__header {
+    margin-bottom: 1em;
+  }
+
+  &__toggle-btn {
+    .btn;
+    .btn-default;
+  }
+}
+
+.tweet {
+  margin: 15px 0 0 60px;
+  width: 400px;
+
+  &__user {
+    margin-bottom: 2px;
+
+    &-name {
+      color: black;
+    }
+
+    &-screen-name {
+      color: #8899a6;
+      &:before {
+        content: "@";
+      }
+    }
+
+    &-photo {
+      float: left;
+      margin: 2px 15px 0 -60px;
+      border-radius: 5px;
+    }
+  }
+
+  &__fav-btn {
+    .btn;
+    .btn-sm;
+    .btn-default;
+  }
 }

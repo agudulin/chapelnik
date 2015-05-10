@@ -1,14 +1,23 @@
-<div>
-  <div>{{vm.keywords}}</div>
-  <button ng-click="vm.toggleStream()">
-    {{ vm.isStreamingEnabled ? "Stop stream" : "Start stream" }}
-  </button>
-  <div>{{vm.status}}</div>
-</div>
+<div class="twitter-stream">
+  <div class="twitter-stream__header">
+    <div class="twitter-stream__keywords">{{vm.keywords}}</div>
+    <button class="twitter-stream__toggle-btn" ng-click="vm.toggleStream()">
+      {{ vm.isStreamingEnabled ? "Stop stream" : "Start stream" }}
+    </button>
+    <div class="twitter-stream__status">{{vm.status}}</div>
+  </div>
 
-<div ng-repeat="tweet in vm.tweetList track by tweet.id">
-  <div>
-    <img ng-src="{{tweet.user.profile_image_url}}" />
-    {{tweet.user.screen_name}} ({{tweet.user.name}}): {{tweet.text}}
+  <div class="twitter-stream__content" ng-repeat="tweet in vm.tweetList track by tweet.id">
+    <div class="tweet">
+      <div class="tweet__user">
+        <img class="tweet__user-photo" ng-src="{{tweet.user.profile_image_url}}" />
+        <strong class="tweet__user-name">{{tweet.user.name}}</strong>
+        <span class="tweet__user-screen-name">{{tweet.user.screen_name}}</span>
+      </div>
+      <div class="tweet__text">{{tweet.text}}</div>
+      <div class="tweet__footer">
+        <button class="tweet__fav-btn">Favourite</button>
+      </div>
+    </div>
   </div>
 </div>
