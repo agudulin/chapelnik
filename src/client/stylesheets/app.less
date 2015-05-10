@@ -2,13 +2,33 @@
 @import "../../../bower_components/bootstrap/less/glyphicons";
 @import "../../../bower_components/bootstrap/less/grid";
 
-main {
-  .container;
+.full-height-pane(@width: 50%) {
+  width: @width;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  padding: 0 20px;
+}
+
+@media (min-width: 768px){
+  body, html {
+    overflow: hidden;
+    height: 100%;
+  }
+  .twitter-stream {
+    .full-height-pane();
+    left: 0;
+  }
+
+  .favorites {
+    .full-height-pane();
+    right: 0;
+    background-color: #f7f7f9;
+  }
 }
 
 .twitter-stream {
-  .make-xs-column(6);
-
   &__header {
     margin-bottom: 20px;
   }
