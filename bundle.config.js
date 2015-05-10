@@ -11,6 +11,9 @@ module.exports = {
           src: "./bower_components/angular-route/angular-route.js",
           minSrc: "./bower_components/angular-route/angular-route.min.js"
         }, {
+          src: "./bower_components/angular-resource/angular-resource.js",
+          minSrc: "./bower_components/angular-resource/angular-resource.min.js"
+        }, {
           src: "./bower_components/jquery/dist/jquery.js",
           minSrc: "./bower_components/jquery/dist/jquery.min.js"
         }, {

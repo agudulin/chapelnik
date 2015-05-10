@@ -1,7 +1,7 @@
 (function(){
 
   angular
-    .module("Chapelnik", ["ngRoute"])
+    .module("Chapelnik", ["ngRoute", "ngResource"])
     .config(config);
 
   config.$inject = ["$locationProvider"];
