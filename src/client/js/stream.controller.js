@@ -9,7 +9,7 @@
   function StreamController(socket, STREAM_STATUS) {
     var vm = this;
 
-    vm.keywords = ""; // think of commas as logical ORs
+    vm.keywords = "eCommerce,CRO"; // think of commas as logical ORs
     vm.status = STREAM_STATUS.initial;
     vm.tweetList = [];
     vm.isStreamingEnabled = false;
