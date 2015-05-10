@@ -15,7 +15,7 @@
     vm.isStreamingEnabled = false;
     vm.toggleStream = toggleStream;
 
-    socket.on("newTweets", function(data) {
+    socket.on("newTweet", function(data) {
       vm.status = STREAM_STATUS.streaming;
       vm.tweetList.unshift(data);
     });

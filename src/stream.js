@@ -20,12 +20,20 @@ function Stream(server) {
       twitterClient.stream("statuses/filter", { track: data.query }, function(stream) {
         currentStream = stream;
 
-        stream.on("data", function(tweets) {
-          socket.emit("newTweets", tweets);
+        stream.on("data", function(tweet) {
+          socket.emit("newTweet", {
+            id: tweet.id,
+            text: tweet.text,
+            user: {
+              screenName: tweet.user.screen_name,
+              name: tweet.user.name,
+              profileImageUrl: tweet.user.profile_image_url
+            }
+          });
         });
 
         stream.on("error", function(error) {
-          socket.emit("err", { error: error });
+          socket.emit("err", error);
         });
 
         stream.on("end", function() {
