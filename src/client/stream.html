@@ -1,10 +1,10 @@
 <div class="twitter-stream">
   <div class="twitter-stream__header">
     <h3 class="twitter-stream__keywords">{{vm.keywords}}</h3>
-    <p class="twitter-stream__status">{{vm.status}}</p>
     <button class="twitter-stream__toggle-btn" ng-click="vm.toggleStream()">
       {{ vm.isStreamingEnabled ? "Stop stream" : "Start stream" }}
     </button>
+    <small>{{vm.status}}</small>
   </div>
 
   <div class="twitter-stream__content">
