@@ -2,4 +2,8 @@
   <div class="favorites__header">
     <h3>Favorite Tweets</h3>
   </div>
+
+  <div class="favorites__content">
+    <chplnk-tweet ng-repeat="tweet in vm.tweetList | orderBy:'-createdAt' track by tweet._id" tweet="tweet" />
+  </div>
 </div>
