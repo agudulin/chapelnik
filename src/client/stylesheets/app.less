@@ -1,4 +1,5 @@
 @import "../../../bower_components/bootstrap/less/bootstrap";
+@import "../../../bower_components/bootstrap/less/glyphicons";
 @import "../../../bower_components/bootstrap/less/grid";
 
 main {
@@ -6,19 +7,32 @@ main {
 }
 
 .twitter-stream {
+  .make-xs-column(6);
+
   &__header {
-    margin-bottom: 1em;
+    margin-bottom: 20px;
   }
 
   &__toggle-btn {
     .btn;
     .btn-default;
   }
+
+  &__status {
+    .bg-info;
+    padding: 5px 10px;
+  }
 }
 
 .tweet {
-  margin: 15px 0 0 60px;
-  width: 400px;
+  margin-top: 5px;
+  padding: 10px 10px 10px 70px;
+  // width: 500px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: lightyellow;
+  }
 
   &__user {
     margin-bottom: 2px;
@@ -43,7 +57,17 @@ main {
 
   &__fav-btn {
     .btn;
-    .btn-sm;
+    .btn-xs;
     .btn-default;
+    float: right;
+
+    &._active {
+      .btn-warning;
+    }
   }
+}
+
+.icon-star {
+  .glyphicon;
+  .glyphicon-star;
 }
