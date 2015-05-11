@@ -8,4 +8,4 @@ if (process.env.NODE_ENV === "production") {
   configFile = "prod.js";
 }
 
-module.exports = require("../config/" + configFile);
+module.exports = require.main.require("config/" + configFile);

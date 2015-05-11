@@ -1,7 +1,7 @@
 var socketIO = require("socket.io");
 var Twitter = require("twitter");
 
-var config = require("./config");
+var config = require("app/config");
 
 function Stream(server) {
   var io = socketIO.listen(server);

@@ -1,6 +1,6 @@
 var express = require("express");
 
-var bundles = require("../../../bundle.result.json");
+var bundles = require.main.require("bundle.result.json");
 
 var app = module.exports = express();
 

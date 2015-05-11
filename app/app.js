@@ -8,10 +8,10 @@ var methodOverride = require("method-override");
 var morgan = require("morgan");
 var mongoose = require("mongoose");
 
-var config = require("./config");
+var config = require("app/config");
 var routes = {
-  main: require("./routes/main"),
-  tweets: require("./routes/tweets")
+  main: require("app/routes/main"),
+  tweets: require("app/routes/tweets")
 };
 
 // connect to mongo db

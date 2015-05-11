@@ -1,8 +1,8 @@
 var http = require("http");
-var app = require("./src/app");
+var app = require("app/app");
 
 var server = http.createServer(app);
-var stream = require("./src/stream")(server);
+var stream = require("app/stream")(server);
 
 // start the server
 server.listen(app.get("port"), function() {
