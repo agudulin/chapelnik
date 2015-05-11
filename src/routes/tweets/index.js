@@ -1,9 +1,9 @@
 var express = require("express");
 var Twitter = require("twitter");
 
+var config = require("../../config");
 var Tweet = require("../../model/tweet");
 
-var config = require("../../config");
 var twitterClient = new Twitter(config.twitter);
 
 var app = module.exports = express();
