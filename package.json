@@ -7,7 +7,7 @@
     "dev": "NODE_ENV=development nodemon index",
     "test": "NODE_ENV=development mocha test/*",
     "build": "NODE_ENV=production gulp build",
-    "prod": "NODE_ENV=production PORT=8080 nodemon index"
+    "prod": "NODE_ENV=production PORT=8080 forever start index.js"
   },
   "repository": {
     "type": "git",
