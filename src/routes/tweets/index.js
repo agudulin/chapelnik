@@ -12,34 +12,34 @@ app.get("/favorites", getFavoriteTweets);
 app.post("/favorites", addTweetToFavorites);
 app.delete("/favorites/:id", removeTweetFromFavorites);
 
-function getFavoriteTweets(req, res) {
+function getFavoriteTweets(req, res, next) {
   Tweet.find(function(err, favoriteTweets) {
     if (err) {
-      return res.status(500).send({ err: err });
+      return next(err);
     }
     res.send(favoriteTweets);
   });
 }
 
-function addTweetToFavorites(req, res) {
   var tweet = req.body;
+function addTweetToFavorites(req, res, next) {
 
   var tweetModel = new Tweet(tweet);
   tweetModel.save(function(err, favoriteTweets) {
     if (err) {
-      return res.status(500).send({ err: err });
+      return next(err);
     }
     res.send(favoriteTweets);
   });
 }
 
-function removeTweetFromFavorites(req, res) {
+function removeTweetFromFavorites(req, res, next) {
   var id = req.params.id;
 
-  Tweet.remove({ _id: id }, function(err) {
+  Tweet.findByIdAndRemove(id, function(err, removedTweet) {
     if (err) {
-      return res.status(500).send({ err: err });
+      return next(err);
     }
-    res.send({ msg: "success" });
+    res.send(removedTweet);
   });
 }

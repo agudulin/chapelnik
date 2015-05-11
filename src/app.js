@@ -34,6 +34,7 @@ app.use(express.static(path.join(__dirname, "..", "public"), {
   maxAge: 365 * 24 * 60 * 60
 }));
 
+// send full error stack traces to the client when an error occurs
 if (app.get("env") === "development") {
   app.use(errorhandler());
 }
