@@ -1,0 +1,43 @@
+@import "../../../bower_components/bootstrap/less/bootstrap";
+
+.tweet {
+  margin-top: 5px;
+  padding: 10px 10px 10px 70px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: lightyellow;
+  }
+
+  &__user {
+    margin-bottom: 2px;
+
+    &-name {
+      color: black;
+    }
+
+    &-screen-name {
+      color: #8899a6;
+      &:before {
+        content: "@";
+      }
+    }
+
+    &-photo {
+      float: left;
+      margin: 2px 15px 0 -60px;
+      border-radius: 5px;
+    }
+  }
+
+  &__fav-btn {
+    .btn;
+    .btn-xs;
+    .btn-default;
+    float: right;
+
+    &._active {
+      .btn-warning;
+    }
+  }
+}

@@ -2,6 +2,8 @@
 @import "../../../bower_components/bootstrap/less/glyphicons";
 @import "../../../bower_components/bootstrap/less/grid";
 
+@import "tweet";
+
 .full-height-pane(@width: 50%) {
   width: @width;
   position: absolute;
@@ -11,21 +13,9 @@
   padding: 0 20px;
 }
 
-@media (min-width: 768px){
-  body, html {
-    overflow: hidden;
-    height: 100%;
-  }
-  .twitter-stream {
-    .full-height-pane();
-    left: 0;
-  }
-
-  .favorites {
-    .full-height-pane();
-    right: 0;
-    background-color: #f7f7f9;
-  }
+.icon-star {
+  .glyphicon;
+  .glyphicon-star;
 }
 
 .twitter-stream {
@@ -45,49 +35,19 @@
   }
 }
 
-.tweet {
-  margin-top: 5px;
-  padding: 10px 10px 10px 70px;
-  transition: background-color 0.3s;
-
-  &:hover {
-    background-color: lightyellow;
+@media (min-width: 768px){
+  body, html {
+    overflow: hidden;
+    height: 100%;
+  }
+  .twitter-stream {
+    .full-height-pane();
+    left: 0;
   }
 
-  &__user {
-    margin-bottom: 2px;
-
-    &-name {
-      color: black;
-    }
-
-    &-screen-name {
-      color: #8899a6;
-      &:before {
-        content: "@";
-      }
-    }
-
-    &-photo {
-      float: left;
-      margin: 2px 15px 0 -60px;
-      border-radius: 5px;
-    }
+  .favorites {
+    .full-height-pane();
+    right: 0;
+    background-color: #f7f7f9;
   }
-
-  &__fav-btn {
-    .btn;
-    .btn-xs;
-    .btn-default;
-    float: right;
-
-    &._active {
-      .btn-warning;
-    }
-  }
-}
-
-.icon-star {
-  .glyphicon;
-  .glyphicon-star;
 }

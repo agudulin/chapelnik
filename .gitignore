@@ -21,7 +21,7 @@ coverage
 
 # built files
 public
-src/client/stylesheets/app.css
+app/client/stylesheets/app.css
 bundle.result.json
 
 # Dependency directory
