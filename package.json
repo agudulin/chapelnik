@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "NODE_ENV=development nodemon index",
-    "test": "NODE_ENV=development mocha test/*"
+    "test": "NODE_ENV=development mocha test/*",
+    "build": "NODE_ENV=production gulp build",
+    "prod": "NODE_ENV=production PORT=8080 nodemon index"
   },
   "repository": {
     "type": "git",
