@@ -10,6 +10,7 @@ var mongoose = require("mongoose");
 
 var config = require("./config");
 var routes = {
+  main: require("./routes/main"),
   tweets: require("./routes/tweets")
 };
 
@@ -40,6 +41,7 @@ if (app.get("env") === "development") {
 }
 
 // setup routes
+app.use(routes.main);
 app.use(routes.tweets);
 
 app.set("port", process.env.PORT || 3000);

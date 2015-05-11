@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chapelnik</title>
 
-    <link rel="stylesheet" href="./main.css"/>
+    {{{ bundle.main.styles }}}
   </head>
   <body ng-cloak>
     <main>
@@ -13,8 +13,9 @@
       <div ng-controller="StreamController as vm" ng-include="'stream.html'"></div>
     </main>
 
+    <script>window.STREAM_SERVICE_URL = "{{{ STREAM_SERVICE_URL }}}";</script>
     <script src="/socket.io/socket.io.js"></script>
-    <script src="./vendor.js"></script>
-    <script src="./main.js"></script>
+    {{{ bundle.vendor.scripts }}}
+    {{{ bundle.main.scripts }}}
   </body>
 </html>

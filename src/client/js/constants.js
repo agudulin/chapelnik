@@ -2,7 +2,7 @@
 
   angular
     .module("Chapelnik")
-    .constant("STREAM_SERVICE_URL", "http://localhost:3000")
+    .constant("STREAM_SERVICE_URL", window.STREAM_SERVICE_URL)
     .constant("STREAM_STATUS", {
       initial: "Ready to stream (it stops after 20 seconds)",
       beforeStreaming: "Getting new tweets...",
