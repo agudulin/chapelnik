@@ -15,4 +15,10 @@ var TweetSchema = new Schema({
   }
 });
 
+TweetSchema.path("id").required(true);
+TweetSchema.path("text").required(true);
+TweetSchema.path("user.screenName").required(true);
+TweetSchema.path("user.name").required(true);
+TweetSchema.path("user.profileImageUrl").required(true);
+
 module.exports = mongoose.model("Tweet", TweetSchema);
