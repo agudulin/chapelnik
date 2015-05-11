@@ -51,4 +51,31 @@ describe("Chapelnik rest api server", function() {
       });
   });
 
+  it("retrieves a collection of favorite tweets", function(done) {
+    superagent.get("http://localhost:3000/favorites")
+      .end(function(err, res) {
+        var tweets = res.body;
+
+        chai.expect(err).to.eql(null);
+        chai.expect(tweets).to.be.an("array");
+        chai.expect(tweets.length).to.eql(1);
+        chai.expect(tweets[0]._id).to.eql(favoriteTweet._id);
+
+        done();
+      });
+  });
+
+  it("removes just added tweet", function(done) {
+    superagent.del("http://localhost:3000/favorites/" + favoriteTweet._id)
+      .end(function(err, res) {
+        var removedTweet = res.body;
+
+        chai.expect(err).to.eql(null);
+        chai.expect(removedTweet).to.be.an("object");
+        chai.expect(removedTweet._id).to.eql(favoriteTweet._id);
+
+        done();
+      });
+  });
+
 });
