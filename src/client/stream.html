@@ -1,6 +1,6 @@
 <div class="twitter-stream">
   <div class="twitter-stream__header">
-    <h3 class="twitter-stream__keywords">{{vm.keywords}}</h3>
+    <h3 class="twitter-stream__keywords">Twitter Stream for <small>{{ vm.keywords.join(", ") }}</small></h3>
     <button class="twitter-stream__toggle-btn" ng-click="vm.toggleStream()">
       {{ vm.isStreamingEnabled ? "Stop stream" : "Start stream" }}
     </button>
