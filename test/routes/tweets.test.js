@@ -1,3 +1,9 @@
+//
+// XXX(agudulin):
+//  it's better to run tests in test environment with own db or use mocks
+//  but now it is running in developemnt env, so be sure that no enries left in the db after testing
+//
+
 var superagent = require("superagent");
 var chai = require("chai");
 

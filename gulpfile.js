@@ -1,19 +1,11 @@
 var gulp = require("gulp");
 
 // gulp plugins
-var jshint = require("gulp-jshint");
 var clean = require("gulp-clean");
 var bundle = require("gulp-bundle-assets");
 var less = require("gulp-less");
 
 // tasks
-gulp.task("lint", function() {
-  gulp.src(["./src/client/**/*.js"])
-    .pipe(jshint())
-    .pipe(jshint.reporter("default"))
-    .pipe(jshint.reporter("fail"));
-});
-
 gulp.task("clean", function() {
     gulp.src("./public/*")
       .pipe(clean({force: true}));
@@ -44,5 +36,5 @@ gulp.task("default", ["less", "bundle", "copy-html-files"], function() {
 });
 
 gulp.task("build",
-  ["lint", "less", "bundle", "copy-html-files"]
+  ["less", "bundle", "copy-html-files"]
 );
