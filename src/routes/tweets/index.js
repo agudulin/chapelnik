@@ -21,11 +21,13 @@ function getFavoriteTweets(req, res, next) {
   });
 }
 
-  var tweet = req.body;
 function addTweetToFavorites(req, res, next) {
+  var tweet = new Tweet(req.body).toObject();
+  // delete the _id property, otherwise Mongo will return a "Mod on _id not allowed" error
+  delete tweet._id;
 
-  var tweetModel = new Tweet(tweet);
-  tweetModel.save(function(err, favoriteTweets) {
+  // update tweet (at least tweet.createdAt property) in db if it is already exist
+  Tweet.findOneAndUpdate({ id: tweet.id }, tweet, { upsert: true }, function(err, favoriteTweets) {
     if (err) {
       return next(err);
     }
