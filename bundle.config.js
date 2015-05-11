@@ -30,8 +30,8 @@ module.exports = {
     },
 
     main: {
-      scripts: "./src/client/**/*.js",
-      styles: "./src/client/**/*.css",
+      scripts: "./app/client/**/*.js",
+      styles: "./app/client/**/*.css",
       options: {
         uglify: prodLikeEnvs,
         minCSS: prodLikeEnvs,

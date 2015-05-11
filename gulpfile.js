@@ -12,9 +12,9 @@ gulp.task("clean", function() {
 });
 
 gulp.task("less", function() {
-  return gulp.src("./src/client/stylesheets/app.less")
+  return gulp.src("./app/client/stylesheets/app.less")
     .pipe(less())
-    .pipe(gulp.dest("./src/client/stylesheets"));
+    .pipe(gulp.dest("./app/client/stylesheets"));
 });
 
 gulp.task("bundle", function() {
@@ -25,15 +25,15 @@ gulp.task("bundle", function() {
 });
 
 gulp.task("copy-html-files", function () {
-  gulp.src("./src/client/**/*.html")
-    .pipe(gulp.dest("public/"));
+  gulp.src("./app/client/**/*.html")
+    .pipe(gulp.dest("./public/"));
 });
 
 
 gulp.task("default", ["less", "bundle", "copy-html-files"], function() {
-  gulp.watch("./src/client/**/*.less", ["less"]);
-  gulp.watch("./src/client/**/*.+(js|css)", ["bundle"]);
-  gulp.watch("./src/client/**/*.html", ["copy-html-files"]);
+  gulp.watch("./app/client/**/*.less", ["less"]);
+  gulp.watch("./app/client/**/*.+(js|css)", ["bundle"]);
+  gulp.watch("./app/client/**/*.html", ["copy-html-files"]);
 });
 
 gulp.task("build",
