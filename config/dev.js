@@ -1,6 +1,6 @@
 //
 // dev environment config
-// no need to require this file directly, use `./src/config` instead
+// no need to require this file directly, use `./app/config` instead
 //
 
 module.exports = {
