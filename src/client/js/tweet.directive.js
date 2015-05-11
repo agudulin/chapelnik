@@ -31,7 +31,6 @@
 
       function toggleFavorites(tweetItem) {
         var tweetModel = new TweetModel();
-        console.log(tweetModel);
         tweetModel = $.extend(tweetModel, tweetItem); // add tweet item properties to the model
 
         if (vm.isFavorite) {

@@ -14,7 +14,7 @@
     function startPolling() {
       TweetModel.query(function(tweetList){
         vm.tweetList = tweetList;
-        $timeout(startPolling, 1000);
+        $timeout(startPolling, 2 * 1000);
       });
     }
   }
