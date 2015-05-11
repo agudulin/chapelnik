@@ -11,7 +11,8 @@
         replace: true,
         transclude: true,
         scope: {
-          tweet: "="
+          tweet: "=",
+          isFavorite: "@"
         },
         controller: TweetController,
         controllerAs: "vm",
@@ -26,13 +27,28 @@
     function TweetController(TweetModel) {
       var vm = this;
 
-      vm.addToFavorites = addToFavorites;
+      vm.toggleFavorites = toggleFavorites;
 
-      function addToFavorites(tweetItem) {
+      function toggleFavorites(tweetItem) {
         var tweetModel = new TweetModel();
+        console.log(tweetModel);
         tweetModel = $.extend(tweetModel, tweetItem); // add tweet item properties to the model
 
-        tweetModel.$save(function(savedItem) {
+        if (vm.isFavorite) {
+          removeFromFavorites(tweetModel);
+        } else {
+          addToFavorites(tweetModel);
+        }
+      }
+
+      function addToFavorites(tweetModel) {
+        tweetModel.$save(function() {
+          // success
+        });
+      }
+
+      function removeFromFavorites(tweetModel) {
+        tweetModel.$remove(function() {
           // success
         });
       }
