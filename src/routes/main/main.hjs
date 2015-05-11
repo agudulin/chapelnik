@@ -13,7 +13,6 @@
       <div ng-controller="StreamController as vm" ng-include="'stream.html'"></div>
     </main>
 
-    <script>window.STREAM_SERVICE_URL = "{{{ STREAM_SERVICE_URL }}}";</script>
     <script src="/socket.io/socket.io.js"></script>
     {{{ bundle.vendor.scripts }}}
     {{{ bundle.main.scripts }}}
