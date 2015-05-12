@@ -3,10 +3,14 @@
 .tweet {
   margin-top: 5px;
   padding: 10px 10px 10px 70px;
-  transition: background-color 0.3s;
+  transition: all 0.3s;
 
   &:hover {
     background-color: lightyellow;
+  }
+
+  &._processing {
+    opacity: 0.3;
   }
 
   &__user {

@@ -1,9 +1,12 @@
-<div class="tweet">
+<div ng-class="vm.isProcessing ? 'tweet _processing' : 'tweet'">
   <div class="tweet__user">
     <img class="tweet__user-photo" ng-src="{{vm.tweet.user.profileImageUrl}}" />
     <strong class="tweet__user-name">{{vm.tweet.user.name}}</strong>
     <span class="tweet__user-screen-name">{{vm.tweet.user.screenName}}</span>
-    <button ng-class="vm.isFavorite ? 'tweet__fav-btn _active' : 'tweet__fav-btn'" ng-click="vm.toggleFavorites(vm.tweet)">
+    <button
+      ng-class="vm.isFavorite ? 'tweet__fav-btn _active' : 'tweet__fav-btn'"
+      ng-click="vm.toggleFavorites(vm.tweet)"
+      ng-disabled="vm.isProcessing">
       <span class="icon-star"></span>
     </button>
   </div>
