@@ -42,7 +42,7 @@ function Stream(server) {
 
         setTimeout(function(){
           stream.destroy();
-        }, 20 * 1000);
+        }, 30 * 1000);
       });
     });
 
