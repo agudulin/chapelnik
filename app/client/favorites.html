@@ -4,6 +4,7 @@
   </div>
 
   <div class="favorites__content">
+    <small class="loading" ng-hide="vm.isFirstTimeLoaded">Loading&hellip;</small>
     <chplnk-tweet
       ng-repeat="tweet in vm.tweetList | orderBy:'-createdAt' track by tweet._id"
       tweet="tweet"
